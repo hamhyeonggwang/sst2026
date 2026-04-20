@@ -892,16 +892,13 @@
       };
 
       try {
-        // SCRIPT_URL이 설정된 경우 실제 전송
-        if (SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbxHyt74F9tH7iiZ3wjWVmy3AZ-qa76naSb78j8kVcjPMUL69_XAfhnmYIR0PfZWLUS-3A/exec') {
-          const res = await fetch(SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'text/plain' },
-            body: JSON.stringify(payload),
-          });
-        }
-        // 성공 화면 표시
+        await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload),
+        });
+
         document.getElementById('step-4').classList.remove('active');
         document.getElementById('success-screen').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
