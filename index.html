@@ -83,6 +83,11 @@
       transition: background 0.2s, transform 0.15s;
     }
     .nav-cta:hover { background: var(--teal-deep); transform: translateY(-1px); }
+    .nav-closed {
+      background: var(--sand); color: var(--text-mid);
+      cursor: default; pointer-events: none;
+    }
+    .nav-closed:hover { background: var(--sand); transform: none; }
 
     /* ──────────────── HERO ──────────────── */
     .hero {
@@ -185,6 +190,20 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .btn-secondary:hover { border-color: var(--teal-main); color: var(--teal-main); }
+    .hero-notice {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--teal-pale); border: 1.5px solid var(--teal-light);
+      color: var(--teal-deep); padding: 14px 24px; border-radius: 12px;
+      font-family: var(--font-ui);
+      font-size: 0.92rem; font-weight: 600; line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.8s 0.75s forwards;
+    }
+    .cta-closed-msg {
+      font-family: var(--font-body);
+      font-size: 1.05rem; color: rgba(255,255,255,0.85);
+      line-height: 1.8; margin-bottom: 8px;
+    }
 
     .hero-right {
       display: flex; align-items: center; justify-content: center;
@@ -670,7 +689,7 @@
       <li><a href="#roles">모집 역할</a></li>
       <li><a href="#prereq">참가 조건</a></li>
     </ul>
-    <a href="apply.html" class="nav-cta">신청하기 →</a>
+    <span class="nav-cta nav-closed">접수 마감</span>
   </nav>
 
   <!-- HERO -->
@@ -684,16 +703,17 @@
       <p class="hero-subtitle">
         발달장애 청소년의 실제 삶 속 참여를 지원하고,<br>
         작업수행분석 기반 임상 전문성을 강화하는<br>
-        <strong>2026년 상반기 캠프 참가자를 모집합니다.</strong>
+        <strong>2026년 상반기 SST 캠프</strong> — 올해 모든 캠프 인원 모집이 완료되었습니다.
       </p>
+      <div class="hero-notice">✓ 올해 모든 캠프 인원 모집이 완료되었습니다. 감사합니다.</div>
       <div class="hero-badges">
         <span class="badge badge-teal"><span class="badge-icon">📍</span> 천안 · 평창</span>
         <span class="badge badge-teal"><span class="badge-icon">🗓</span> 5월 · 6월</span>
         <span class="badge badge-gold"><span class="badge-icon">✦</span> 참가비 없음</span>
       </div>
       <div class="hero-cta-group">
-        <a href="apply.html" class="btn-primary">지금 신청하기 →</a>
-        <a href="#about" class="btn-secondary">프로그램 알아보기</a>
+        <a href="#about" class="btn-primary">프로그램 알아보기 →</a>
+        <a href="#schedule" class="btn-secondary">캠프 일정 보기</a>
       </div>
     </div>
     <div class="hero-right">
@@ -773,7 +793,7 @@
     <div class="section-inner">
       <div class="section-tag">2026 상반기 일정</div>
       <h2 class="section-heading">두 번의 캠프,<br>직접 선택하세요</h2>
-      <p class="section-desc">각 캠프는 금요일~일요일 2박 3일 일정으로 운영됩니다. 하나 또는 두 일정 모두 신청 가능합니다.</p>
+      <p class="section-desc">각 캠프는 금요일~일요일 2박 3일 일정으로 운영됩니다. 참가자 모집은 마감되었습니다.</p>
       <div class="schedule-cards reveal">
         <div class="camp-card">
           <div class="camp-card-top">
@@ -932,7 +952,7 @@
   <section class="prereq-section" id="prereq">
     <div class="section-inner">
       <div class="section-tag">참가 조건</div>
-      <h2 class="section-heading">신청 전 꼭<br>확인해 주세요</h2>
+      <h2 class="section-heading">참가자에게<br>안내드립니다</h2>
       <div class="prereq-grid reveal">
         <div class="prereq-card pc-free">
           <div class="prereq-icon">🎁</div>
@@ -962,7 +982,7 @@
         <div>
           SST는 제한된 인원으로 운영되는 프로그램으로 선발된 인원에 한해 참여가 가능합니다.
           <strong>사전 연락 없이 불참할 경우 향후 SST 프로그램 참여가 제한될 수 있습니다.</strong>
-          일정을 충분히 확인하고 신중히 신청해 주시기 바랍니다.
+          선발된 참가자는 일정을 충분히 확인하고 성실히 참여해 주시기 바랍니다.
         </div>
       </div>
     </div>
@@ -972,12 +992,12 @@
   <section class="cta-section">
     <div class="cta-eyebrow">서울특별시 작업치료사회 · SST 2026</div>
     <h2 class="cta-title">
-      임상가로 성장하는<br>이 여정에 함께하세요
+      올해 모든 캠프 인원 모집이<br>완료되었습니다
     </h2>
+    <p class="cta-closed-msg">올해 모든 캠프 인원 모집이 완료되었습니다. 감사합니다.</p>
     <p class="cta-sub">참여 후 공식 역할 인증이 부여됩니다 · 참가비 없음</p>
     <div class="cta-buttons">
-      <a href="apply.html" class="btn-cta-primary">📋 참가 신청하기</a>
-      <a href="#top" class="btn-cta-ghost">↑ 처음으로 돌아가기</a>
+      <a href="#top" class="btn-cta-primary">↑ 처음으로 돌아가기</a>
     </div>
     <div class="cta-counts">
       <div class="count-item">
