@@ -88,7 +88,7 @@ function ensureClosedModal() {
   overlay.setAttribute('aria-modal', 'true');
   overlay.innerHTML = `
     <div class="sst-modal">
-      <div class="sst-modal-icon" aria-hidden="true">📋</div>
+      <div class="sst-modal-icon" aria-hidden="true"><svg class="icon"><use href="#icon-clipboard"/></svg></div>
       <h2 class="sst-modal-title"></h2>
       <p class="sst-modal-body"></p>
       <button type="button" class="sst-modal-btn">확인</button>
