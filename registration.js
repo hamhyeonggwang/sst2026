@@ -1,9 +1,9 @@
-/** SST 2026 상반기 접수 마감 — true이면 신청 불가 */
-const SST_REGISTRATION_CLOSED = true;
+/** SST 2026 접수 마감 — true이면 신청 불가 */
+const SST_REGISTRATION_CLOSED = false;
 
 const SST_CLOSED_MESSAGE = {
-  title: '상반기 접수가 모두 마감되었습니다',
-  body: '2026년 SST 상반기 캠프 참가 신청 접수가 종료되었습니다.\n문의 사항은 서울특별시 작업치료사회 공식 채널로 연락해 주세요.',
+  title: '접수가 모두 마감되었습니다',
+  body: '2026년 SST 캠프 참가 신청 접수가 종료되었습니다.\n문의 사항은 서울특별시 작업치료사회 공식 채널로 연락해 주세요.',
 };
 
 function ensureClosedModal() {
@@ -120,7 +120,7 @@ function lockApplyPage() {
   if (main) {
     const banner = document.createElement('div');
     banner.className = 'apply-closed-banner';
-    banner.textContent = '상반기 접수가 모두 마감되었습니다.';
+    banner.textContent = '접수가 모두 마감되었습니다.';
     main.insertBefore(banner, main.firstChild);
   }
   const wrap = document.querySelector('.apply-wrap');
